@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 #define TERMINAL "st"
-#define BROWSER "brave-browser"
+#define BROWSER "firefox"
 #define FILEMAN_GUI "pcmanfm"
 #define FILEMAN_CLI "lf"
 
@@ -18,13 +18,13 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "mononoki NF:size=14" };
 static const char dmenufont[]       = "mononoki NF:size=14";
 static const char col_bg[]          = "#151515";
-static const char col_fg[]          = "#abb2bf";
-static const char col_accent[]      = "#323232";
-static const char col_border[]      = "#424242";
+//static const char col_fg[]          = "#abb2bf";
+static const char col_fg[]          = "#d1d1d1";
+static const char col_accent[]      = "#346475";
 static const char *colors[][3]      = {
 	/*               fg         bg            border   */
 	[SchemeNorm] = { col_fg,    col_bg,       col_bg },
-	[SchemeSel]  = { col_fg,    col_accent,   col_border },
+	[SchemeSel]  = { col_fg,    col_accent,   col_accent },
 };
 
 /* tagging */
