@@ -1,24 +1,24 @@
 /* See LICENSE file for copyright and license details. */
 
-#define TERMINAL "st"
-#define BROWSER "firefox"
-#define FILEMAN_GUI "pcmanfm"
-#define FILEMAN_CLI "lf"
+#define TERMINAL 	"st"
+#define BROWSER		"firefox"
+#define FILEMAN_GUI 	"pcmanfm"
+#define FILEMAN_CLI 	"lf"
+#define GAPPX 		10
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
-static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = GAPPX;    /* horiz inner gap between windows */
+static const unsigned int gappiv    = GAPPX;    /* vert inner gap between windows */
+static const unsigned int gappoh    = GAPPX;    /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = GAPPX;    /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "mononoki NF:size=14" };
 static const char dmenufont[]       = "mononoki NF:size=14";
 static const char col_bg[]          = "#151515";
-//static const char col_fg[]          = "#abb2bf";
 static const char col_fg[]          = "#d1d1d1";
 static const char col_accent[]      = "#346475";
 static const char *colors[][3]      = {
