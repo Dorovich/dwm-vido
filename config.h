@@ -4,7 +4,7 @@
 #define BROWSER		"firefox"
 #define FILEMAN_GUI 	"pcmanfm"
 #define FILEMAN_CLI 	"lf"
-#define GAPPX 		10
+#define GAPPX 		6
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -38,6 +38,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ NULL,       NULL,       "IDI-Lab",  0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -69,6 +70,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]	= { "dmenu_run", "-m", dmenumon, "-i", "-p", "Run:", NULL };
 static const char *termcmd[]	= { TERMINAL, NULL };
 static const char *browsercmd[]	= { BROWSER, NULL };
+static const char *mbrwsrcmd[]	= { "tabbed", "-c", "vimb", "-e", NULL };
 static const char *gfilescmd[]	= { FILEMAN_GUI, NULL };
 static const char *filescmd[]	= { TERMINAL, "-e", FILEMAN_CLI, NULL };
 static const char *lockcmd[]	= { "slock", NULL };
@@ -79,6 +81,7 @@ static const Key keys[] = {
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,             		XK_Escape, spawn,          {.v = lockcmd } },
 	{ MODKEY,           		XK_b,      spawn,      	   {.v = browsercmd } },
+	{ MODKEY|ShiftMask,           	XK_b,      spawn,      	   {.v = mbrwsrcmd } },
 	{ MODKEY,           		XK_w,      spawn,      	   {.v = filescmd } },
 	{ MODKEY|ShiftMask,           	XK_w,      spawn,      	   {.v = gfilescmd } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
@@ -113,18 +116,19 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	//{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, /* quit dwm */
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} }, /* restart */
+	//{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, /* quit dwm */
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("scriptctl wmquit") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("scriptctl music") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("scriptctl password") },
 	{ MODKEY,              		XK_o,      spawn,          SHCMD("scriptctl soundout") },
 	{ MODKEY,              		XK_x,      spawn,          SHCMD("scriptctl kill") },
-	{ MODKEY,                       XK_Insert, spawn,          SHCMD("scriptctl snippet 1") },
-	{ MODKEY,                       XK_Print,  spawn,          SHCMD("scriptctl screenshot 1") },
-	{ MODKEY,                       XK_plus,   spawn,          SHCMD("scriptctl volume 1") },
-	{ MODKEY,                       XK_minus,  spawn,          SHCMD("scriptctl volume 2") },
+	{ MODKEY,                       XK_Insert, spawn,          SHCMD("scriptctl snippet") },
+	{ MODKEY,                       XK_Print,  spawn,          SHCMD("scriptctl screenshot") },
+	{ MODKEY,                       XK_plus,   spawn,          SHCMD("scriptctl volume up") },
+	{ MODKEY,                       XK_minus,  spawn,          SHCMD("scriptctl volume down") },
 	{ MODKEY,             		XK_r,      spawn,          SHCMD("scriptctl") },
+	{ MODKEY,             		XK_F1,     spawn,          SHCMD("ayuda") },
 };
 
 /* button definitions */
