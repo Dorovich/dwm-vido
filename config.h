@@ -74,6 +74,7 @@ static const char *mbrwsrcmd[]	= { "tabbed", "-c", "vimb", "-e", NULL };
 static const char *gfilescmd[]	= { FILEMAN_GUI, NULL };
 static const char *filescmd[]	= { TERMINAL, "-e", FILEMAN_CLI, NULL };
 static const char *lockcmd[]	= { "slock", NULL };
+static const char *editorcmd[]	= { "/bin/sh", "-c", "emacsclient -c -a 'emacs'", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -84,6 +85,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,           	XK_b,      spawn,      	   {.v = mbrwsrcmd } },
 	{ MODKEY,           		XK_w,      spawn,      	   {.v = filescmd } },
 	{ MODKEY|ShiftMask,           	XK_w,      spawn,      	   {.v = gfilescmd } },
+	{ MODKEY,           		XK_e,      spawn,      	   {.v = editorcmd } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
