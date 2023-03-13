@@ -16,8 +16,8 @@ static const unsigned int gappov    = GAPPX;    /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "mononoki NF:size=14" };
-static const char dmenufont[]       = "mononoki NF:size=14";
+static const char *fonts[]          = { "mononoki NF:size=12" };
+static const char dmenufont[]       = "mononoki NF:size=12";
 static const char col_bg[]          = "#151515";
 static const char col_fg[]          = "#d1d1d1";
 static const char col_accent[]      = "#346475";
@@ -35,10 +35,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ NULL,       NULL,       "IDI-Lab",  0,            1,           -1 },
+	/* class      instance    title               tags mask     isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,               0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,               1 << 8,       0,           -1 },
+	{ NULL,       NULL,       "IDI-Lab",          0,            1,           -1 },
+	{ "Steam",    NULL,       "Lista de amigos",  0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -70,7 +71,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]	= { "dmenu_run", "-m", dmenumon, "-i", "-p", "Run:", NULL };
 static const char *termcmd[]	= { TERMINAL, NULL };
 static const char *browsercmd[]	= { BROWSER, NULL };
-static const char *mbrwsrcmd[]	= { "tabbed", "-c", "vimb", "-e", NULL };
+//static const char *mbrwsrcmd[]	= { "tabbed", "-c", "vimb", "-e", NULL };
+static const char *mbrwsrcmd[]	= { "/bin/sh", "-c", "qutebrowser", NULL };
 static const char *gfilescmd[]	= { FILEMAN_GUI, NULL };
 static const char *filescmd[]	= { TERMINAL, "-e", FILEMAN_CLI, NULL };
 static const char *lockcmd[]	= { "slock", NULL };
