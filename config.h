@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 #define TERMINAL 	"st"
-#define BROWSER		"firefox"
+#define BROWSER		"qutebrowser"
 #define FILEMAN_GUI 	"pcmanfm"
 #define FILEMAN_CLI 	"lf"
 #define GAPPX 		6
@@ -70,9 +70,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]	= { "dmenu_run", "-m", dmenumon, "-i", "-p", "Run:", NULL };
 static const char *termcmd[]	= { TERMINAL, NULL };
-static const char *browsercmd[]	= { BROWSER, NULL };
-//static const char *mbrwsrcmd[]	= { "tabbed", "-c", "vimb", "-e", NULL };
-static const char *mbrwsrcmd[]	= { "/bin/sh", "-c", "qutebrowser", NULL };
+static const char *browsercmd[]	= { "/bin/sh", "-c", BROWSER, NULL };
+static const char *foxcmd[]	= { "firefox", NULL };
 static const char *gfilescmd[]	= { FILEMAN_GUI, NULL };
 static const char *filescmd[]	= { TERMINAL, "-e", FILEMAN_CLI, NULL };
 static const char *lockcmd[]	= { "slock", NULL };
@@ -84,7 +83,7 @@ static const Key keys[] = {
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,             		XK_Escape, spawn,          {.v = lockcmd } },
 	{ MODKEY,           		XK_b,      spawn,      	   {.v = browsercmd } },
-	{ MODKEY|ShiftMask,           	XK_b,      spawn,      	   {.v = mbrwsrcmd } },
+	{ MODKEY|ShiftMask,           	XK_b,      spawn,      	   {.v = foxcmd } },
 	{ MODKEY,           		XK_w,      spawn,      	   {.v = filescmd } },
 	{ MODKEY|ShiftMask,           	XK_w,      spawn,      	   {.v = gfilescmd } },
 	{ MODKEY,           		XK_e,      spawn,      	   {.v = editorcmd } },
