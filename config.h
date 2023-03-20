@@ -38,8 +38,9 @@ static const Rule rules[] = {
 	/* class      instance    title               tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,               0,            1,           -1 },
 	{ "Steam",    NULL,       "Lista de amigos",  0,            1,           -1 },
-	{ "thunderbird", "Msgcompose", NULL,          0,            1,           -1 },
 	{ NULL,       NULL,       "IDI-Lab",          0,            1,           -1 },
+	{ "thunderbird", "Msgcompose", NULL,          0,            1,           -1 },
+	{ "FilePicker", NULL,     NULL,               0,            1,           -1 },
 };
 
 /* layout(s) */
