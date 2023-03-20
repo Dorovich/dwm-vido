@@ -1,6 +1,11 @@
 * Mi configuración para DWM,
 el gestor de ventanas dinámico
 
+** Parches
+[...]
+
+** Teclas
+
 | *Combinación* | *Uso*                                             |
 |---------------+---------------------------------------------------|
 | Super+B       | Abrir navegador de internet (qutebrowser)         |
@@ -9,3 +14,5 @@ el gestor de ventanas dinámico
 | Super+Shift+W | Abrir gestor de archivos alternativo (pcmanfm)    |
 | Super+P       | Menú de selección de contraseñas (dmenu + pass)   |
 | Super+M       | Menú de gestión de música (dmenu + mpd + mpc)     |
+
+[...]
