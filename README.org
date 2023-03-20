@@ -1,4 +1,5 @@
-* DWM, el gestor de ventanas dinámico
+* Mi configuración para DWM
+** el gestor de ventanas dinámico
 
 | *Combinación* | *Uso*                                             |
 |---------------+---------------------------------------------------|
