@@ -42,6 +42,7 @@ static const Rule rules[] = {
 	{ "thunderbird", "Msgcompose", NULL,          0,            1,           -1 },
 	{ "FilePicker", NULL,     NULL,               0,            1,           -1 },
 	{ "robloxplayerlauncher.exe", NULL,     NULL, 0,            1,           -1 },
+	{ NULL,       NULL,       "SCPSL",            0,            1,           -1 },
 };
 
 /* layout(s) */
