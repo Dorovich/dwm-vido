@@ -11,29 +11,38 @@ el gestor de ventanas dinámico
 + [[https://dwm.suckless.org/patches/vanitygaps/dwm-vanitygaps-20200610-f09418b.diff][vanitygaps]]
 
 ** Teclas
-| *Combinación*          | *Uso*                                                 |
-|------------------------+-------------------------------------------------------|
-| Super+J                | Enfocar ventana siguiente                             |
-| Super+K                | Enfocar ventana anterior                              |
-| Super+H                | Entrechar ventana maestra                             |
-| Super+L                | Ensanchar ventana maestra                             |
-| Super+C                | Cerrar ventana actual                                 |
-| Super+F                | Ventana actual a pantalla completa                    |
-| Super+D                | Abrir menú de ejecución de programas (dmenu)          |
-| Super+G                | (Des)Activar huecos entre ventanas                    |
-| Super+T                | Activar modo /Maetro y pila/                          |
-| Super+M                | Activar modo /Monóculo/                               |
-| Super+S                | Hacer ventana actual flotante                         |
-| Super+Shift+S          | Hacer todas las ventanas flotantes                    |
-| Super+Enter            | Abrir terminal (st)                                   |
-| Super+B                | Abrir navegador de internet (firefox)                 |
-| Super+Shift+B          | Abrir navegador de internet alternativo (qutebrowser) |
-| Super+W                | Abrir gestor de archivos (lf)                         |
-| Super+Shift+W          | Abrir gestor de archivos alternativo (pcmanfm)        |
-| Super+P                | Menú de selección de contraseñas (dmenu + pass)       |
-| Super+M                | Menú de gestión de música (dmenu + mpd + mpc)         |
-| Super+{1,2,3...}       | Ir a tag {1,2,3...}                                   |
-| Super+Shift+{1,2,3...} | Mover ventana actual a tag {1,2,3...}                 |
-| Super+Esc              | Bloquear pantalla                                     |
-| Super+Shift+R          | Reiniciar dwm                                         |
-| Super+Shift+Q          | Menú de cierre de sesión / apagado                    |
++ Gestionar ventanas
+| *Combinación*          | *Uso*                                        |
+|------------------------+----------------------------------------------|
+| Super+J                | Enfocar ventana siguiente                    |
+| Super+K                | Enfocar ventana anterior                     |
+| Super+H                | Entrechar ventana maestra                    |
+| Super+L                | Ensanchar ventana maestra                    |
+| Super+C                | Cerrar ventana actual                        |
+| Super+F                | Ventana actual a pantalla completa           |
+| Super+G                | (Des)Activar huecos entre ventanas           |
+| Super+T                | Activar modo /Maetro y pila/                 |
+| Super+M                | Activar modo /Monóculo/                      |
+| Super+S                | Hacer ventana actual flotante                |
+| Super+Shift+S          | Hacer todas las ventanas flotantes           |
+| Super+{1,2,3...}       | Ir a tag {1,2,3...}                          |
+| Super+Shift+{1,2,3...} | Mover ventana actual a tag {1,2,3...}        |
+
++ Programas
+| *Combinación* | *Uso*                                                 |
+|---------------+-------------------------------------------------------|
+| Super+Enter   | Abrir terminal (st)                                   |
+| Super+D       | Abrir menú de ejecución de programas (dmenu)          |
+| Super+B       | Abrir navegador de internet (firefox)                 |
+| Super+Shift+B | Abrir navegador de internet alternativo (qutebrowser) |
+| Super+W       | Abrir gestor de archivos (lf)                         |
+| Super+Shift+W | Abrir gestor de archivos alternativo (pcmanfm)        |
+| Super+P       | Menú de selección de contraseñas (dmenu + pass)       |
+| Super+M       | Menú de gestión de música (dmenu + mpd + mpc)         |
+
++ Sesión
+| *Combinación* | *Uso*                              |
+|---------------+------------------------------------|
+| Super+Esc     | Bloquear pantalla                  |
+| Super+Shift+R | Reiniciar dwm                      |
+| Super+Shift+Q | Menú de cierre de sesión / apagado |

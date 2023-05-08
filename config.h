@@ -4,6 +4,7 @@
 #define BROWSER		"qutebrowser"
 #define FILEMAN_GUI 	"pcmanfm"
 #define FILEMAN_CLI 	"lf"
+#define SCRIPTCTL	"scriptctl"
 #define GAPPX 		6
 
 /* appearance */
@@ -123,7 +124,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} }, /* restart */
-	//{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, /* quit dwm */
+#ifdef SCRIPTCTL
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("scriptctl wmquit") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("scriptctl music") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("scriptctl password") },
@@ -134,6 +135,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_plus,   spawn,          SHCMD("scriptctl volume up") },
 	{ MODKEY,                       XK_minus,  spawn,          SHCMD("scriptctl volume down") },
 	{ MODKEY,             		XK_r,      spawn,          SHCMD("scriptctl") },
+#else
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, /* quit dwm */
+#endif
 	{ MODKEY,             		XK_F1,     spawn,          SHCMD("ayuda") },
 };
 
