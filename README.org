@@ -60,7 +60,7 @@ La tecla /Mod/ es la que tiene el logo de Windows en algunos teclados, también 
 | Mod+R         | Selección de scripts            |
 
 #+BEGIN_QUOTE
-[!] Si /SCRIPTCTL/ está definido en =config.h= se usan estos comandos y Mod+Shift+Q sustituye al comando de la siguiente sección con la misma tecla asiganada.
+*[!]* Si /SCRIPTCTL/ está definido en =config.h=, se usan estos comandos y Mod+Shift+Q sustituye al comando de la siguiente sección con la misma tecla asiganada.
 #+END_QUOTE
 
 + Sesión
