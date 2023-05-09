@@ -1,3 +1,5 @@
+#+OPTIONS: \n:t num:t timestamp:nil
+
 * Mi configuración para DWM
 El gestor de ventanas dinámico
 
