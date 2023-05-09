@@ -84,3 +84,5 @@ La tecla /Mod/ es la que tiene el logo de Windows en algunos teclados, también 
 | Mod+Minus     | Subir volumen de mpd            |
 | Mod+R         | Selección de scripts            |
 
+** Extras
+Para autoiniciar programas no hace falta ningún parche adicional para dwm, lo único que hace falta es poner lo que quieres que se ejecute en =~/.xprofile= (o en algunos casos =~/.xinitrc=). Además, se pueden definir variables globales para el sistema en =~/.profile=.
