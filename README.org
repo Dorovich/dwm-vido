@@ -8,9 +8,9 @@ El gestor de ventanas dinámico
 
 ** Funcionamiento
 #+BEGIN_QUOTE
-/dwm es un administrador de ventanas dinámico para X. Administra ventanas en diseños de mosaico, monóculo y flotantes.  Todos los diseños se pueden aplicar dinámicamente, optimizando el entorno para la aplicación en uso y la tarea realizada./ \\
-    ~ [[https://dwm.suckless.org/][dwm.suckless.org]]
+/dwm es un administrador de ventanas dinámico para X. Administra ventanas en diseños de mosaico, monóculo y flotantes.  Todos los diseños se pueden aplicar dinámicamente, optimizando el entorno para la aplicación en uso y la tarea realizada./
 #+END_QUOTE
+~ [[https://dwm.suckless.org/][dwm.suckless.org]]
 
 #+ATTR_ORG: :width 1000
 [[file:pics/scr1.png]]
