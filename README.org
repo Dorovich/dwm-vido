@@ -1,5 +1,5 @@
-* Mi configuración para DWM,
-el gestor de ventanas dinámico
+* Mi configuración para DWM
+El gestor de ventanas dinámico
 
 #+ATTR_ORG: :width 1000
 [[file:scr.png]]

@@ -83,35 +83,53 @@ static const char *editorcmd[]	= { "/bin/sh", "-c", "emacsclient -c -a 'emacs'",
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+    
+        /* Sesión */
+	{ MODKEY,             		XK_Escape, spawn,          {.v = lockcmd } },
+	{ MODKEY,             		XK_F1,     spawn,          SHCMD("ayuda") },
+	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} }, /* restart */
+#ifdef SCRIPTCTL
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("scriptctl wmquit") },
+#else
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, /* quit dwm */
+#endif
+
+        /* Programas */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,             		XK_Escape, spawn,          {.v = lockcmd } },
 	{ MODKEY,           		XK_b,      spawn,      	   {.v = foxcmd } },
 	{ MODKEY|ShiftMask,           	XK_b,      spawn,      	   {.v = browsercmd } },
 	{ MODKEY,           		XK_w,      spawn,      	   {.v = filescmd } },
 	{ MODKEY|ShiftMask,           	XK_w,      spawn,      	   {.v = gfilescmd } },
 	{ MODKEY,           		XK_e,      spawn,      	   {.v = editorcmd } },
-	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
+
+        /* Desplazar foco */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_space,  zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,             		XK_c,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_s,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_Tab,    setlayout,      {0} },
-	{ MODKEY,             		XK_s,      togglefloating, {0} },
-	{ MODKEY,             		XK_f,      togglefullscr,  {0} },
-	{ MODKEY,              		XK_g,      togglegaps,     {0} },
+	{ MODKEY,                       XK_Down,   focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Up,     focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_Left,   setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+
+        /* Gestionar ventanas */
+	{ MODKEY,             		XK_c,      killclient,     {0} },
+	{ MODKEY,                       XK_space,  zoom,           {0} },
+	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = -1 } },
+	{ MODKEY,             		XK_f,      togglefullscr,  {0} },
+	{ MODKEY,              		XK_g,      togglegaps,     {0} },
+	{ MODKEY,             		XK_s,      togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_s,      setlayout,      {.v = &layouts[1]} }, /* Floating */
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, /* Tiled */
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[2]} }, /* Monocle */
+	{ MODKEY|ShiftMask,             XK_Tab,    setlayout,      {0} },
+        
+        /* Gestionar etiquetas */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -123,9 +141,12 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} }, /* restart */
+	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_Tab,    view,           {0} },
+        
+        /* Scripts */
 #ifdef SCRIPTCTL
-	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("scriptctl wmquit") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("scriptctl music") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("scriptctl password") },
 	{ MODKEY,              		XK_o,      spawn,          SHCMD("scriptctl soundout") },
@@ -135,10 +156,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_plus,   spawn,          SHCMD("scriptctl volume up") },
 	{ MODKEY,                       XK_minus,  spawn,          SHCMD("scriptctl volume down") },
 	{ MODKEY,             		XK_r,      spawn,          SHCMD("scriptctl") },
-#else
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, /* quit dwm */
 #endif
-	{ MODKEY,             		XK_F1,     spawn,          SHCMD("ayuda") },
 };
 
 /* button definitions */
