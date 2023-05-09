@@ -69,6 +69,7 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define SCRIPT(scr) { .v = (const char*[]){ SCRIPTCTL,  scr, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -89,7 +90,7 @@ static const Key keys[] = {
 	{ MODKEY,             		XK_F1,     spawn,          SHCMD("ayuda") },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} }, /* restart */
 #ifdef SCRIPTCTL
-	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("scriptctl wmquit") },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SCRIPT("wmquit") },
 #else
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, /* quit dwm */
 #endif
@@ -147,15 +148,15 @@ static const Key keys[] = {
         
         /* Scripts */
 #ifdef SCRIPTCTL
-	{ MODKEY,                       XK_m,      spawn,          SHCMD("scriptctl music") },
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("scriptctl password") },
-	{ MODKEY,              		XK_o,      spawn,          SHCMD("scriptctl soundout") },
-	{ MODKEY,              		XK_x,      spawn,          SHCMD("scriptctl kill") },
-	{ MODKEY,                       XK_Insert, spawn,          SHCMD("scriptctl snippet") },
-	{ MODKEY,                       XK_Print,  spawn,          SHCMD("scriptctl screenshot") },
-	{ MODKEY,                       XK_plus,   spawn,          SHCMD("scriptctl volume up") },
-	{ MODKEY,                       XK_minus,  spawn,          SHCMD("scriptctl volume down") },
-	{ MODKEY,             		XK_r,      spawn,          SHCMD("scriptctl") },
+	{ MODKEY,                       XK_m,      spawn,          SCRIPT("music") },
+	{ MODKEY,                       XK_p,      spawn,          SCRIPT("password") },
+	{ MODKEY,              		XK_o,      spawn,          SCRIPT("soundout") },
+	{ MODKEY,              		XK_x,      spawn,          SCRIPT("kill") },
+	{ MODKEY,                       XK_Insert, spawn,          SCRIPT("snippet") },
+	{ MODKEY,                       XK_Print,  spawn,          SCRIPT("screenshot") },
+	{ MODKEY,                       XK_plus,   spawn,          SCRIPT("volume-up") },
+	{ MODKEY,                       XK_minus,  spawn,          SCRIPT("volume-down") },
+	{ MODKEY,             		XK_r,      spawn,          SCRIPT(NULL) },
 #endif
 };
 
