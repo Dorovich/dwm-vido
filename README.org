@@ -4,6 +4,15 @@ El gestor de ventanas dinámico
 #+ATTR_ORG: :width 1000
 [[file:pics/scr2.png]]
 
+** Funcionamiento
+#+BEGIN_QUOTE
+/dwm es un administrador de ventanas dinámico para X. Administra ventanas en diseños de mosaico, monóculo y flotantes.  Todos los diseños se pueden aplicar dinámicamente, optimizando el entorno para la aplicación en uso y la tarea realizada./
+                                                       - [[https://dwm.suckless.org/][dwm.suckless.org]]
+#+END_QUOTE
+
+#+ATTR_ORG: :width 1000
+[[file:pics/scr1.png]]
+   
 ** Parches
 + [[https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20211013-cb3f58a.diff][actualfullscreen]]
 + [[https://dwm.suckless.org/patches/alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff][alwayscenter]]
@@ -83,9 +92,6 @@ La tecla /Mod/ es la que tiene el logo de Windows en algunos teclados, también 
 | Mod+Plus      | Bajar volumen de mpd            |
 | Mod+Minus     | Subir volumen de mpd            |
 | Mod+R         | Selección de scripts            |
-
-#+ATTR_ORG: :width 1000
-[[file:pics/scr1.png]]
 
 ** Extras
 Para autoiniciar programas no hace falta ningún parche adicional para dwm, lo único que hace falta es poner lo que quieres que se ejecute en =~/.xprofile= (o en algunos casos =~/.xinitrc=). Además, se pueden definir variables globales para el sistema en =~/.profile=.
