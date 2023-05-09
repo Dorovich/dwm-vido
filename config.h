@@ -36,14 +36,14 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title               tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,               0,            1,           -1 },
-	{ "Steam",    NULL,       "Lista de amigos",  0,            1,           -1 },
-	{ NULL,       NULL,       "IDI-Lab",          0,            1,           -1 },
-	{ "thunderbird", "Msgcompose", NULL,          0,            1,           -1 },
-	{ "FilePicker", NULL,     NULL,               0,            1,           -1 },
-	{ "robloxplayerlauncher.exe", NULL,     NULL, 0,            1,           -1 },
-	{ NULL,       NULL,       "SCPSL",            0,            1,           -1 },
+	/* class                       instance       title               tags mask  isfloating  monitor */
+	{ "Gimp",                      NULL,          NULL,               0,         1,          -1 },
+	{ "Steam",                     NULL,          "Lista de amigos",  0,         1,          -1 },
+	{ NULL,                        NULL,          "IDI-Lab",          0,         1,          -1 },
+	{ "thunderbird",               "Msgcompose",  NULL,               0,         1,          -1 },
+	{ "FilePicker",                NULL,          NULL,               0,         1,          -1 },
+	{ "robloxplayerlauncher.exe",  NULL,          NULL,               0,         1,          -1 },
+	{ NULL,                        NULL,          "SCPSL",            0,         1,          -1 },
 };
 
 /* layout(s) */
@@ -69,7 +69,7 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-#define SCRIPT(scr) { .v = (const char*[]){ SCRIPTCTL,  scr, NULL } }
+#define SCRIPT(scr) { .v = (const char*[]){ SCRIPTCTL, scr, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -82,6 +82,7 @@ static const char *filescmd[]	= { TERMINAL, "-e", FILEMAN_CLI, NULL };
 static const char *lockcmd[]	= { "slock", NULL };
 static const char *editorcmd[]	= { "/bin/sh", "-c", "emacsclient -c -a 'emacs'", NULL };
 
+/* ver README.org para más información sobre las teclas */
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
     
