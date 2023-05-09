@@ -2,7 +2,10 @@
 El gestor de ventanas dinámico
 
 #+ATTR_ORG: :width 1000
-[[file:scr.png]]
+[[file:pics/scr1.png]]
+
+#+ATTR_ORG: :width 1000
+[[file:pics/scr2.png]]
 
 ** Parches
 + [[https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20211013-cb3f58a.diff][actualfullscreen]]
