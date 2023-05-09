@@ -13,60 +13,74 @@ El gestor de ventanas dinámico
 ** Teclas
 La tecla /Mod/ es la que tiene el logo de Windows en algunos teclados, también se suele llamar /Super/ o /Mod4/ y está entre Control y Alt izquierdos.
 
-+ Gestionar ventanas
-| *Combinación*        | *Uso*                                      |
-|----------------------+--------------------------------------------|
-| Mod+J                | Enfocar ventana siguiente                  |
-| Mod+K                | Enfocar ventana anterior                   |
-| Mod+H                | Entrechar ventana maestra                  |
-| Mod+L                | Ensanchar ventana maestra                  |
-| Mod+Espacio          | Enfocar ventana maestra                    |
-| Mod+C                | Cerrar ventana actual                      |
-| Mod+F                | Ventana actual a pantalla completa         |
-| Mod+G                | (Des)Activar huecos entre ventanas         |
-| Mod+T                | Activar modo /Maetro y pila/               |
-| Mod+M                | Activar modo /Monóculo/                    |
-| Mod+S                | Hacer ventana actual flotante              |
-| Mod+Shift+S          | Hacer todas las ventanas flotantes         |
-| Mod+I                | Incrementar el número de ventanas maestras |
-| Mod+Shift+I          | Decrementar el número de ventanas maestras |
-| Mod+{1,2,3...}       | Ir a la etiqueta {1,2,3...}                |
-| Mod+Shift+{1,2,3...} | Mover ventana actual a etiqueta {1,2,3...} |
++ Sesión
+| *Combinación*   | *Uso*                      |
+|-----------------+----------------------------|
+| Mod+F1          | Ayuda                      |
+| Mod+Esc         | Bloquear pantalla          |
+| Mod+Shift+R     | Reiniciar dwm              |
+| Mod+Shift+Q (a) | Cerrar sesión              |
+| Mod+Shift+Q (b) | Cierre de sesión / apagado |
+
+#+BEGIN_QUOTE
+*[!]* Si /SCRIPTCTL/ está definido en =config.h= Mod+Shift+Q (b) sustituye a Mod+Shift+Q (a), ya que éste primero depende del gestor de scripts, y si no está definido se hace la acción por defecto.
+#+END_QUOTE
 
 + Programas
 | *Combinación* | *Uso*                                                 |
 |---------------+-------------------------------------------------------|
-| Mod+Enter     | Abrir terminal (st)                                   |
 | Mod+D         | Abrir menú de ejecución de programas (dmenu)          |
+| Mod+Enter     | Abrir terminal (st)                                   |
 | Mod+B         | Abrir navegador de internet (firefox)                 |
 | Mod+Shift+B   | Abrir navegador de internet alternativo (qutebrowser) |
 | Mod+W         | Abrir gestor de archivos (lf)                         |
 | Mod+Shift+W   | Abrir gestor de archivos alternativo (pcmanfm)        |
-| Mod+P         | Menú de selección de contraseñas (dmenu + pass)       |
-| Mod+M         | Menú de gestión de música (dmenu + mpd + mpc)         |
+| Mod+E         | Abrir emacs                                           |
+
++ Desplazar foco
+| *Combinación* | *Uso*                     |
+|---------------+---------------------------|
+| Mod+J / Mod+↓ | Enfocar ventana siguiente |
+| Mod+K / Mod+↑ | Enfocar ventana anterior  |
+| Mod+H / Mod+← | Entrechar ventana maestra |
+| Mod+L / Mod+→ | Ensanchar ventana maestra |
+
++ Gestionar ventanas
+| *Combinación* | *Uso*                                      |
+|---------------+--------------------------------------------|
+| Mod+C         | Cerrar ventana actual                      |
+| Mod+Espacio   | Enfocar ventana maestra                    |
+| Mod+Ctrl+B    | (Des)Activar barra superior                |
+| Mod+I         | Incrementar el número de ventanas maestras |
+| Mod+Shift+I   | Decrementar el número de ventanas maestras |
+| Mod+F         | Ventana actual a pantalla completa         |
+| Mod+G         | (Des)Activar huecos entre ventanas         |
+| Mod+S         | Hacer ventana actual flotante              |
+| Mod+Shift+S   | Hacer todas las ventanas flotantes         |
+| Mod+T         | Activar modo /Maetro y pila/               |
+| Mod+Shift+T   | Activar modo /Monóculo/                    |
+| Mod+Shift+Tab | Cambiar a modo anterior                    |
+
++ Gestionar etiquetas
+| *Combinación*       | *Uso*                                           |
+|---------------------+-------------------------------------------------|
+| Mod+{1,2,..9}       | Ir a la etiqueta {1,2,..9}                      |
+| Mod+Shift+{1,2,..9} | Cambiar etiqueta de ventana actual a {1,2,..9}  |
+| Mod+Ctrl+{1,2,..9}  | Mostrar etiqueta {1,2,..9}                      |
+| Mod+0               | Mostrar todas las etiquetas                     |
+| Mod+Shift+0         | Colocar todas las etiquetas a la ventana actual |
+| Mod+Tab             | Ver etiqueta anterior                           |
 
 + Scripts (opcionales)
 | *Combinación* | *Uso*                           |
 |---------------+---------------------------------|
-| Mod+Shift+Q   | Cierre de sesión / apagado      |
 | Mod+M         | Selección de música (mpd + mpc) |
 | Mod+P         | Selección de contraseñas (pass) |
 | Mod+O         | Dispositivos de salida de audio |
 | Mod+X         | Detener procesos                |
-| Mod+Ins       | Insertar snippet                |
+| Mod+Insert    | Insertar snippet                |
 | Mod+Print     | Captura de pantalla completa    |
 | Mod+Plus      | Bajar volumen de mpd            |
 | Mod+Minus     | Subir volumen de mpd            |
 | Mod+R         | Selección de scripts            |
 
-#+BEGIN_QUOTE
-*[!]* Si /SCRIPTCTL/ está definido en =config.h=, se usan estos comandos y Mod+Shift+Q sustituye al comando de la siguiente sección con la misma tecla asiganada.
-#+END_QUOTE
-
-+ Sesión
-| *Combinación* | *Uso*             |
-|---------------+-------------------|
-| Mod+F1        | Ayuda             |
-| Mod+Esc       | Bloquear pantalla |
-| Mod+Shift+R   | Reiniciar dwm     |
-| Mod+Shift+Q   | Cerrar sesión     |
