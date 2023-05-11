@@ -157,6 +157,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Print,  spawn,          SCRIPT("screenshot") },
 	{ MODKEY,                       XK_plus,   spawn,          SCRIPT("volume-up") },
 	{ MODKEY,                       XK_minus,  spawn,          SCRIPT("volume-down") },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          SCRIPT("launch-steamapp") },
 	{ MODKEY,             		XK_r,      spawn,          SCRIPT(NULL) },
 #endif
 };
