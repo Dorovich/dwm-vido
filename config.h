@@ -1,7 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 #define TERMINAL 	"st"
-#define BROWSER		"qutebrowser"
+#define BROWSER		"librewolf"
+#define VISUAL		"emacsclient -c -a 'emacs'"
 #define FILEMAN_GUI 	"pcmanfm"
 #define FILEMAN_CLI 	"lf"
 #define SCRIPTCTL	"scriptctl"
@@ -76,11 +77,11 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]	= { "dmenu_run", "-m", dmenumon, "-i", "-p", "Run:", NULL };
 static const char *termcmd[]	= { TERMINAL, NULL };
 static const char *browsercmd[]	= { BROWSER, NULL };
-static const char *foxcmd[]	= { "firefox", NULL };
+static const char *qbcmd[]	= { "qutebrowser", NULL };
 static const char *gfilescmd[]	= { FILEMAN_GUI, NULL };
 static const char *filescmd[]	= { TERMINAL, "-e", FILEMAN_CLI, NULL };
 static const char *lockcmd[]	= { "slock", NULL };
-static const char *editorcmd[]	= { "/bin/sh", "-c", "emacsclient -c -a 'emacs'", NULL };
+static const char *editorcmd[]	= { "/bin/sh", "-c", VISUAL, NULL };
 
 /* ver README.org para más información sobre las teclas */
 static const Key keys[] = {
@@ -99,8 +100,8 @@ static const Key keys[] = {
         /* Programas */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,           		XK_b,      spawn,      	   {.v = foxcmd } },
-	{ MODKEY|ShiftMask,           	XK_b,      spawn,      	   {.v = browsercmd } },
+	{ MODKEY,           		XK_b,      spawn,      	   {.v = browsercmd } },
+	{ MODKEY|ShiftMask,           	XK_b,      spawn,      	   {.v = qbcmd } },
 	{ MODKEY,           		XK_w,      spawn,      	   {.v = filescmd } },
 	{ MODKEY|ShiftMask,           	XK_w,      spawn,      	   {.v = gfilescmd } },
 	{ MODKEY,           		XK_e,      spawn,      	   {.v = editorcmd } },
