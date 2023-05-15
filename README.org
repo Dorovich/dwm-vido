@@ -14,6 +14,9 @@ El gestor de ventanas dinámico
 
 #+ATTR_ORG: :width 1000
 [[file:pics/scr1.png]]
+
+** Instalación
+Entre los archivos hay un script en bash, =deploy=, que permite instalar fácilmente las dependencias y compilar dwm dejando el directorio limpio. Es compatible con las distribuciones *Debian* y sus derivados (Ubuntu, Linux Mint...) y con *Void Linux*.
    
 ** Parches
 + [[https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20211013-cb3f58a.diff][actualfullscreen]]

@@ -1,19 +1,28 @@
-#!/bin/sh
+#!/bin/bash
 
 use_apt=$(grep debian /etc/os-release > /dev/null; echo $?)
 use_xbps=$(grep void /etc/os-release > /dev/null; echo $?)
 
+declare -a deps
+
 if [ $use_apt -eq 0 ]; then
-    echo "apt detected..."
+    deps=("make" "gcc" "libx11-dev" "libxinerama-dev" "libxft-dev" "libxrandr-dev")
+    for d in "${deps[@]}"; do
+        dpkg -s $d > /dev/null
+        [ $? -ne 0 ] && sudo apt install $d
+    done
 elif [ $use_xbps -eq 0 ]; then
-    echo "xbps detected..."
+    deps=("make" "gcc" "libX11-devel" "libXinerama-devel" "libXft-devel" "libXrandr-devel")
+    for d in "${deps[@]}"; do
+        xbps-query -s $d > /dev/null
+        [ $? -ne 0 ] && sudo xbps-install -S $d
+    done
 fi
 
 if [ ! -d ~/.srcconfig ]; then
     mkdir -p ~/.srcconfig
-fi
-
-if [ ! -d ~/.srcconfig/dwm-vido ]; then
+    git clone git@gitlab.com:files-and-configs/dwm-vido.git ~/.srcconfig
+elif [ ! -d ~/.srcconfig/dwm-vido ]; then
     git clone git@gitlab.com:files-and-configs/dwm-vido.git ~/.srcconfig
 fi
 
