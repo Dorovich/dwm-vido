@@ -35,17 +35,21 @@ Después de la ejecución encontrarás el código fuente de dwm-vido en la carpe
 ** Teclas
 La tecla /Mod/ es la que tiene el logo de Windows en algunos teclados, también se suele llamar /Super/ o /Mod4/ y está entre Control y Alt izquierdos.
 
+#+BEGIN_QUOTE
+*[!]* Los programas que se usan por defecto están entre paréntesis en la columna de *Uso* de la combinación de teclas pertinente. Durante la instalación no se comprueba que estén instalados estos programas, por lo que la elección de usarlos o no se deja a discreción del usuario.
+#+END_QUOTE
+
 + Sesión
 | *Combinación*   | *Uso*                      |
 |-----------------+----------------------------|
 | Mod+F1          | Ayuda                      |
 | Mod+Esc         | Bloquear pantalla          |
 | Mod+Shift+R     | Reiniciar dwm              |
-| Mod+Shift+Q (a) | Cerrar sesión              |
-| Mod+Shift+Q (b) | Cierre de sesión / apagado |
+| Mod+Shift+Q (1) | Cerrar sesión              |
+| Mod+Shift+Q (2) | Cierre de sesión / apagado |
 
 #+BEGIN_QUOTE
-*[!]* Si /SCRIPTCTL/ está definido en =config.h= Mod+Shift+Q (b) sustituye a Mod+Shift+Q (a), ya que éste primero depende del gestor de scripts, y si no está definido se hace la acción por defecto.
+*[!]* Si /SCRIPTCTL/ está definido en =config.h= Mod+Shift+Q (2) sustituye a Mod+Shift+Q (1), ya que éste primero depende del gestor de scripts, y si no está definido se hace la acción por defecto.
 #+END_QUOTE
 
 + Programas
@@ -57,7 +61,7 @@ La tecla /Mod/ es la que tiene el logo de Windows en algunos teclados, también 
 | Mod+Shift+B   | Abrir navegador de internet alternativo (qutebrowser) |
 | Mod+W         | Abrir gestor de archivos (lf)                         |
 | Mod+Shift+W   | Abrir gestor de archivos alternativo (pcmanfm)        |
-| Mod+E         | Abrir emacs                                           |
+| Mod+E         | Abrir editor de texto (emacs)                         |
 
 + Desplazar foco
 | *Combinación* | *Uso*                     |
