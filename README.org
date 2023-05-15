@@ -17,6 +17,14 @@ El gestor de ventanas dinámico
 
 ** Instalación
 Entre los archivos hay un script en bash, =deploy=, que permite instalar fácilmente las dependencias y compilar dwm dejando el directorio limpio. Es compatible con las distribuciones *Debian* y sus derivados (Ubuntu, Linux Mint...) y con *Void Linux*.
+
+Este archivo se puede ejecutar directamente desde cualquier terminal de la siguiente manera (se requiere tener =bash= instalado):
+
+#+BEGIN_SRC bash
+curl -sSL https://gitlab.com/files-and-configs/dwm-vido/-/raw/main/deploy | bash
+#+END_SRC
+
+Después de la ejecución encontrarás el código fuente de dwm-vido en la carpeta *~/.srcconfig/dwm-vido*.
    
 ** Parches
 + [[https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20211013-cb3f58a.diff][actualfullscreen]]
